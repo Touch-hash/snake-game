@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css files/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--  font -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--  font -->
+    <title>Snake Game</title>
+  </head>
+  <body>
+    <header>
+      <div class="game-name"><h1>Snake Game</h1></div>
+      <div class="states">
+        <ul>
+          <li>
+            <h3>Best Score</h3>
+            <p class="best-score">0</p>
+          </li>
+          <li>
+            <h3 class="wins-counter">Wins Counter</h3>
+            <p class="wins-counter">0</p>
+          </li>
+          <li>
+            <h3>Losses Counter</h3>
+            <p class="losses-counter">0</p>
+          </li>
+          <li>
+            <h3>Game Status</h3>
+            <p class="game-status">HOLDING</p>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section class="game-body">
+      <div class="info">
+        <div class="food-card">
+          <p>Food Colls</p>
+          <div class="bar">
+            <p>🍎</p>
+            <div class="progress-bar"><div class="fill-bar"></div></div>
+          </div>
+        </div>
+        <div class="timer">
+          <i class="fa-regular fa-clock"></i>
+          <h4>00:00:00</h4>
+        </div>
+      </div>
+      <div class="snake-body">
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <canvas id="snake"></canvas>
+        </div>
+      </div>
+      <div class="achievements">
+        <div class="current-level">
+          <h3>current level</h3>
+          <p>1</p>
+        </div>
+        <div class="snake-length">
+          <h3>current length</h3>
+          <p>0</p>
+        </div>
+      </div>
+    </section>
+    <section class="controls-body">
+      <div class="controls">
+        <div class="state-snake">
+          <button class="start">Start Game</button
+          ><button class="Restart">Restart</button>
+        </div>
+        <div class="directions">
+          <button class="topBtn">up</button>
+          <div>
+            <button class="leftBtn">left</button>
+            <button class="rightBtn">right</button>
+          </div>
+          <button class="bottomBtn">down</button>
+        </div>
+        <div class="speed">
+          <h3>speed</h3>
+          <div>
+            <button class="easy">easy</button>
+            <button class="medium">medium</button
+            ><button class="hard">hard</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

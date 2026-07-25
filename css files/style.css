@@ -1,0 +1,400 @@
+/* start global value */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #0e1527;
+  font-family: "Outfit", sans-serif;
+  overflow: hidden !important;
+}
+/* start meadia querie */
+@media (max-width: 575px) {
+  .container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  header .game-name h1 {
+    font-size: 14px;
+  }
+  header .states li h3 {
+    font-size: 9px !important;
+  }
+  header {
+    justify-content: none !important;
+  }
+  header .states {
+    width: 100% !important;
+  }
+  .controls-body .controls .directions button {
+    width: 50px !important;
+    height: 30px !important;
+    font-size: 13px;
+  }
+  .controls-body .controls .state-snake button {
+    width: 60px !important;
+    height: 30px !important;
+    font-size: 12px;
+  }
+  .controls-body .controls .speed h3 {
+    font-size: 15px;
+  }
+  .controls-body .controls .speed button {
+    width: 50px !important;
+    height: 25px !important;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 3px;
+  }
+  .controls-body .controls {
+    width: 100% !important;
+    gap: 10px;
+  }
+  .controls-body .state-snake {
+    flex-direction: column;
+  }
+  .controls-body .speed div {
+    flex-direction: column;
+  }
+  header .game-status {
+    font-size: 12px !important;
+  }
+  .game-body .info {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .game-body .info .timer {
+    display: none !important;
+  }
+  .game-body {
+    flex-direction: column;
+  }
+  .game-body .achievements {
+    display: none !important;
+  }
+  .game-body .snake-body {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    width: 540px;
+    margin: 0 auto;
+  }
+  .game-body .info .timer {
+    gap: 10px;
+  }
+  .game-body .info .timer i {
+    font-size: 16px !important;
+  }
+  .game-body .info .timer h4 {
+    font-size: 14px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    width: 750px;
+    margin: 0 auto;
+  }
+  .game-body {
+    padding-top: 10px !important;
+  }
+  .controls-body .controls .directions button {
+    width: 100px !important;
+    height: 40px !important;
+  }
+  .controls-body .controls .state-snake button {
+    width: 100px !important;
+    height: 50px !important;
+  }
+  header {
+    padding-bottom: 10px !important;
+    margin: 5px !important;
+  }
+  .controls-body .controls {
+    width: 100% !important;
+    gap: 10px;
+  }
+  header .states {
+    width: 70% !important;
+  }
+  .game-body .info .timer {
+    gap: 10px;
+  }
+  .game-body .info .timer i {
+    font-size: 16px !important;
+  }
+  .game-body .info .timer h4 {
+    font-size: 14px !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    width: 970px;
+    margin: 0 auto;
+  }
+  .game-body {
+    padding-top: 10px !important;
+  }
+  header {
+    padding-bottom: 10px !important;
+    margin: 5px !important;
+  }
+  .controls-body .controls {
+    width: 90% !important;
+    gap: 10px;
+  }
+  header .states {
+    width: 60% !important;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End media querie */
+/* End global values*/
+
+/* start header */
+header {
+  height: 75px;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: #182033;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+header .game-name h1 {
+  color: white;
+  font-weight: bold;
+}
+
+header .states {
+  width: 50%;
+}
+header .states ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 40px;
+}
+header .states li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header .states li h3 {
+  color: #f6fbff;
+  font-size: 19px;
+}
+header .states li p {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.game-body {
+  padding-top: 30px;
+  padding-bottom: 10px;
+  margin: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  height: 75%;
+}
+.game-body .info {
+  width: 18%;
+}
+.game-body .food-card {
+  width: 100%;
+  max-width: 250px;
+
+  padding: 18px;
+  border-radius: 20px;
+  background: #1c2336;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.game-body .info .bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-top: 5px;
+}
+.game-body .info .progress-bar {
+  width: 100%;
+  height: 16px;
+  border-radius: 50px;
+  background: #25304d;
+  overflow: hidden;
+  border: 1px solid #62ff56;
+}
+.game-body .info .fill-bar {
+  width: 0%;
+  height: 100%;
+  background: #62ff56;
+  border-radius: 50px;
+}
+.game-body .info .timer {
+  width: 100%;
+  max-width: 175px;
+  padding: 18px;
+  margin-top: 30px;
+  border-radius: 20px;
+  background: #1c2336;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.game-body .info .timer i {
+  font-size: 22px;
+  color: #4d97e0;
+}
+.game-body .info .timer h4 {
+  font-size: 20px;
+  color: white;
+}
+.game-body .snake-body {
+  width: 54%;
+  height: 280px;
+  padding: 18px;
+  margin-top: 30px;
+  border-radius: 20px;
+  background: #1c2336;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.game-body .snake-body div {
+  width: 99%;
+  height: 99%;
+  border: 2px solid #82f671;
+  border-radius: 20px;
+}
+.game-body .achievements {
+  width: 24%;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+.game-body .achievements .current-level {
+  width: 150px;
+  padding: 14px;
+  margin-top: 30px;
+  border-radius: 20px;
+  background: #1c2336;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  color: white;
+}
+.game-body .achievements .snake-length {
+  width: 160px;
+  padding: 14px;
+  margin-top: 30px;
+  border-radius: 20px;
+  background: #1c2336;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  color: white;
+}
+
+.controls-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.controls-body .controls {
+  width: 80%;
+  height: 150px;
+  padding: 18px;
+  margin-top: 30px;
+  border-radius: 20px;
+  background: #1c2336;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.controls-body .controls .directions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
+.controls-body .controls .directions button {
+  width: 120px;
+  height: 40px;
+  background-color: #1f3239;
+  color: white;
+  border: 1px solid #62ff56;
+  border-radius: 14px;
+  cursor: pointer;
+}
+.controls-body .controls .directions div {
+  display: flex;
+  gap: 35px;
+}
+.controls-body .controls .state-snake {
+  display: flex;
+  gap: 25px;
+}
+.controls-body .controls .state-snake button {
+  width: 120px;
+  height: 40px;
+  background-color: #1f3239;
+  color: white;
+  border: 1px solid #62ff56;
+  border-radius: 14px;
+  cursor: pointer;
+}
+.controls-body .controls .speed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.controls-body .controls .speed div {
+  display: flex;
+
+  gap: 10px;
+}
+.controls-body .controls .speed button {
+  padding: 10px 15px;
+  background-color: #1f3239;
+  color: white;
+  border: 1px solid #62ff56;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.controls-body .controls button.active {
+  color: #1f3239;
+  background-color: white;
+}
+
+canvas {
+  border: 1px solid red;
+  border-radius: 20px;
+}
+
+.game-status {
+  color: red !important;
+  font-size: 18px !important;
+}
+.game-status.on {
+  color: #62ff56 !important;
+}
