@@ -73,6 +73,7 @@ function moving(snakeBody, value) {
       grow = false;
     }
     snakeBody.unshift(newHead);
+    CurrentLength.textContent = snakeBody.length;
     createSnake(snakeBody);
   } else if (value == "left") {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -83,6 +84,7 @@ function moving(snakeBody, value) {
       grow = false;
     }
     snakeBody.unshift(newHead);
+    CurrentLength.textContent = snakeBody.length;
     createSnake(snakeBody);
   } else if (value == "top") {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -93,6 +95,7 @@ function moving(snakeBody, value) {
       grow = false;
     }
     snakeBody.unshift(newHead);
+    CurrentLength.textContent = snakeBody.length;
     createSnake(snakeBody);
   } else if (value == "bottom") {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -103,6 +106,7 @@ function moving(snakeBody, value) {
       grow = false;
     }
     snakeBody.unshift(newHead);
+    CurrentLength.textContent = snakeBody.length;
     createSnake(snakeBody);
   }
 
@@ -133,8 +137,7 @@ function eatingFood() {
     createFood(food);
     grow = true;
     foodCounter++;
-    fillBar.style.width = (foodCounter / (level * 10)) * 100;
-    CurrentLength.textContent = snakeBody.length;
+    fillBar.style.width = ` ${(foodCounter / (level * 10)) * 100}% `;
   }
 }
 
@@ -166,7 +169,7 @@ function restartGame() {
   direction = null;
   CurrentLength.textContent = snakeBody.length;
   foodCounter = 0;
-  fillBar.style.width = (foodCounter / (level * 10)) * 100;
+  fillBar.style.width = ` ${(foodCounter / (level * 10)) * 100}% `;
   gameStatus = false;
   gameStatusElement.textContent = "HOLDING";
   gameStatusElement.classList.remove("on");
@@ -174,6 +177,8 @@ function restartGame() {
   updateUi(uiName);
   uiName = "easy";
   updateUi(uiName);
+  speed = 250;
+  startLoop(speed);
 }
 
 function updateUi(uiName) {
